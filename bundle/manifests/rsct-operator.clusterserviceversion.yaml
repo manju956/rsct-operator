@@ -17,11 +17,12 @@ metadata:
             },
             "name": "rsct",
             "namespace": "rsct-operator-system"
-          }
+          },
+          "spec": {}
         }
       ]
     capabilities: Basic Install
-    createdAt: "2024-07-10T12:35:54Z"
+    createdAt: "2024-10-07T14:37:59Z"
     operators.operatorframework.io/builder: operator-sdk-v1.34.1
     operators.operatorframework.io/project_layout: go.kubebuilder.io/v4
   name: rsct-operator.v0.0.1
@@ -44,6 +45,14 @@ spec:
     spec:
       clusterPermissions:
       - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - pods
+          verbs:
+          - get
+          - list
+          - watch
         - apiGroups:
           - ""
           resources:
